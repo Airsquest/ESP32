@@ -1,0 +1,28 @@
+#include <TFT_eSPI.h>  // Include TFT_eSPI library
+#include <User_Setup.h>
+#include <SPI.h>
+
+TFT_eSPI tft = TFT_eSPI();  // Create TFT object
+
+void setup() {
+  Serial.begin(115200);  // Start serial for debugging
+
+  // Initialize the TFT screen
+  tft.init();
+  tft.setRotation(3);  // Rotate screen if needed
+
+  // Clear the screen with a black background
+  tft.fillScreen(TFT_BLACK);
+
+  // Set text color and size
+  tft.setTextColor(TFT_WHITE);
+  tft.setTextSize(2);
+
+  // Print "Hello World" in the center of the screen
+  tft.setCursor(50, 100);  // Set the starting cursor position
+  tft.println("Hello World!");
+}
+
+void loop() {
+  // Nothing to do here for now
+}
